@@ -1,4 +1,5 @@
 #include "Plaza.h"
+#include "Field.h"
 
 void Plaza::update()
 {
@@ -6,7 +7,7 @@ void Plaza::update()
 	{
 		show();
 
-		cout << "가고 싶은 장소를 입력하세요 : ";
+		cout << "이동할 장소를 입력하세요 : ";
 		cin >> _placeIndex;
 		system("cls");
 	} while (_placeIndex < 1 || _placeIndex > 4);
@@ -14,12 +15,19 @@ void Plaza::update()
 	switch (_placeIndex)
 	{
 	case 1:
+	{
+		Field f;
+		f.update();
 		break;
+	}
 	case 2:
+		cout << 2;
 		break;
 	case 3:
+		cout << 3;
 		break;
 	case 4:
+		cout << 4;
 		break;
 	}
 }
