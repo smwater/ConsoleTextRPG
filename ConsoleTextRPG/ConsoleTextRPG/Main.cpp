@@ -1,8 +1,10 @@
-#include "Start.h"
+#include "Game.h"
 
 int main()
 {
-	Start s;
+	Game g;
 
-	s.update();
+	g.run();
+
+	return 0;
 }

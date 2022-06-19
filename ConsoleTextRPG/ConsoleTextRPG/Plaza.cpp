@@ -1,5 +1,6 @@
 #include "Plaza.h"
 #include "Field.h"
+#include "Player.h"
 
 void Plaza::update()
 {

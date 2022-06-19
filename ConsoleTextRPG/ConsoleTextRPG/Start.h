@@ -55,7 +55,6 @@ private:
 		{
 			// 캐릭터 생성
 			Player p1;
-			
 			p1.make();
 		}
 		else

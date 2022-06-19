@@ -16,8 +16,18 @@ void Player::make()
 		cin >> jobNum;
 	} while (jobNum != 1 && jobNum != 2);
 
-	if (jobNum == 1) { _job = "전사"; }
-	else { _job = "마법사"; }
+	if (jobNum == 1)
+	{
+		_job = "전사";
+		_str = 5;
+		_dmg = _str * 2;
+	}
+	else 
+	{ 
+		_job = "마법사"; 
+		_intel = 5;
+		_dmg = _intel * 2;
+	}
 
 	cout << "\n캐릭터 생성이 완료되었습니다.\n";
 	system("cls");
@@ -25,4 +35,9 @@ void Player::make()
 	Plaza p;
 	
 	p.update();
+}
+
+void Player::showInfo() const
+{
+	cout << "캐릭터 이름 : " << _name << "|| Lv : " << _level << endl;
 }
