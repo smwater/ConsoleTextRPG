@@ -1,8 +1,8 @@
-#include "Main.h"
+#include "Start.h"
 
 int main()
 {
-	Main main;
+	Start s;
 
-	main.start();
+	s.update();
 }
