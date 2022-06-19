@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Plaza.h"
 
 void Player::make()
 {
@@ -19,4 +20,9 @@ void Player::make()
 	else { _job = "마법사"; }
 
 	cout << "\n캐릭터 생성이 완료되었습니다.\n";
+	system("cls");
+
+	Plaza p;
+	
+	p.update();
 }
