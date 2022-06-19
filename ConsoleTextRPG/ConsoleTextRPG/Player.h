@@ -9,9 +9,7 @@ public:
 	Player(const Player& other) = delete;
 	Player& operator=(const Player& other) = delete;
 
-	void make()
-	{
-	}
+	void make();
 
 private:
 	string _name = {};
@@ -24,6 +22,6 @@ private:
 	int _maxMp = 0;
 	int _str = 0;
 	int _intel = 0;
-	int _dmg = 0; // 직업에 따라 마공일지 물공일지 정해짐 
+	int _dmg = 0; // 직업에 따라 계산식이 정해짐 
 	// 아이템 클래스
 };

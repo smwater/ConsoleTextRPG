@@ -1,5 +1,6 @@
 #pragma once
 #include "Header.h"
+#include "Player.h"
 
 class Start
 {
@@ -9,6 +10,23 @@ public:
 	Start(const Start& other) = delete;
 	Start& operator=(const Start& other) = delete;
 
+	void update()
+	{
+		do
+		{
+			print();
+
+			cout << right << setw(29) << "입력 : ";
+			cin >> _select;
+			system("cls");
+		} while (_select < 1 || _select > 2);
+
+		nextScene();
+	}
+
+private:
+	int _select = 0;
+	
 	void print() const
 	{
 		cout << "┌───────────────────────────────────────────────┐" << endl;
@@ -31,26 +49,14 @@ public:
 		cout << left << setw(49) << "│" << "│" << endl;
 		cout << "└───────────────────────────────────────────────┘" << endl << endl;
 	}
-
-	void update()
-	{
-		do
-		{
-			print();
-
-			cout << right << setw(29) << "입력 : ";
-			cin >> _select;
-			system("cls");
-		} while (_select < 1 || _select > 2);
-
-		nextScene();
-	}
-
 	void nextScene() const
 	{
 		if (_select == 1)
 		{
 			// 캐릭터 생성
+			Player p1;
+			
+			p1.make();
 		}
 		else
 		{
@@ -58,7 +64,4 @@ public:
 			exit(0);
 		}
 	}
-
-private:
-	int _select = 0;
 };
