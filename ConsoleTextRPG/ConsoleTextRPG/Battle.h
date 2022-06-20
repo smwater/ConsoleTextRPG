@@ -1,6 +1,7 @@
 #pragma once
 #include "Header.h"
 #include "Player.h"
+#include "Monster.h"
 
 class Battle
 {
@@ -11,5 +12,8 @@ public:
 	Battle& operator=(const Battle & other) = delete;
 
 	void process(Player p1);
+	void win(Player p1, Slime s1);
+	void defeat(Player p1, Slime s1);
+
 private:
 };

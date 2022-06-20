@@ -46,3 +46,28 @@ void Player::showInfo() const
 	cout << "HP : " << _hp << "/" << _maxHp  << " | MP : " << _mp << "/" << _maxMp << " | 소지금 : " << _money << "\n";
 	cout << "힘 : " << _str << " | 지능 : " << _intel << " | 공격력 : " << _dmg << "\n\n";
 }
+
+void Player::minusHp(int dmg)
+{
+	_hp -= dmg;
+}
+
+void Player::setMoney(int money)
+{
+	_money = money;
+}
+
+int Player::getHp()
+{
+	return _hp;
+}
+
+int Player::getDmg()
+{
+	return _dmg;
+}
+
+string Player::getName()
+{
+	return _name;
+}

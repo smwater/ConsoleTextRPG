@@ -11,7 +11,7 @@ void Plaza::update(Player p1)
 		cout << "이동할 장소를 입력하세요 : ";
 		cin >> _placeIndex;
 		system("cls");
-	} while (_placeIndex < 1 || _placeIndex > 4);
+	} while (_placeIndex < 1 || _placeIndex > 3);
 
 	switch (_placeIndex)
 	{
