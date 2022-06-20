@@ -28,22 +28,11 @@ void Battle::process(Player& p1)
 
 		if (select == 1)
 		{
-			s1.minusHp(p1.getDmg());
-			p1.minusHp(s1.getDmg());
-			str = p1.getName() + "은(는) " + s1.getName() + "을 공격했다.\n\n";
+			str = attack(p1, s1);
 		}
 		else
 		{
-			if ((rand() % 100 + 1) <= RUN_PERCENT)
-			{
-				str = p1.getName() + "은(는) 성공적으로 도망쳤다.\n\n";
-				isRun = true;
-			}
-			else
-			{
-				str = p1.getName() + "은(는) 도망치지 못했다.\n\n";
-				p1.minusHp(s1.getDmg());
-			}
+			str = run(p1, s1, isRun);
 		}
 
 		system("cls");
@@ -59,7 +48,7 @@ void Battle::process(Player& p1)
 			break;
 		}
 
-	} while (isRun == false);
+	} while (isRun != true);
 
 	if (death == false)
 	{
@@ -74,6 +63,7 @@ void Battle::win(Player& p1, Slime s1)
 	cout << s1.getMoney() << "gold를 얻었다.\n\n";
 
 	p1.earnExp(s1.getExp());
+	p1.earnMoney(s1.getMoney());
 	if (p1.levelUp())
 	{
 		cout << p1.getName() << "은(는) 레벨업 했다!\n";
@@ -92,4 +82,33 @@ void Battle::defeat(Player& p1, Slime s1)
 	cout << p1.getName() << "은(는) " << s1.getName() << "과의 전투에서 패배했다...\n\n";
 	cout << "Game Over...\n";
 	exit(0);
+}
+
+string Battle::run(Player& p1, Slime& s1, bool& isRun)
+{
+	string str;
+
+	if ((rand() % 100 + 1) <= RUN_PERCENT)
+	{
+		str = p1.getName() + "은(는) 성공적으로 도망쳤다.\n\n";
+		isRun = true;
+	}
+	else
+	{
+		str = p1.getName() + "은(는) 도망치지 못했다. " + s1.getName() + "에게 공격당했다!\n\n";
+		p1.minusHp(s1.getDmg());
+	}
+
+	return str;
+}
+
+string Battle::attack(Player& p1, Slime& s1)
+{
+	string str;
+
+	s1.minusHp(p1.getDmg());
+	p1.minusHp(s1.getDmg());
+	str = p1.getName() + "은(는) " + s1.getName() + "을 공격했다.\n\n";
+
+	return str;
 }
