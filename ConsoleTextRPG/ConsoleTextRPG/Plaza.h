@@ -10,7 +10,7 @@ public:
 	Plaza(const Plaza& other) = delete;
 	Plaza& operator=(const Plaza& other) = delete;
 
-	void update(Player p1);
+	void update(Player& p1);
 	
 private:
 	int _placeIndex = 0;

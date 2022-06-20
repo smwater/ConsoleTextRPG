@@ -21,9 +21,10 @@ void Battle::process(Player& p1)
 		s1.showInfo();
 		cout << endl;
 
-		cout << "1. 공격하기" << endl;
-		cout << "2. 도망가기(70%)" << endl;
+		cout << "1. 공격하기\n";
+		cout << "2. 도망가기(70%)\n\n";
 
+		cout << "행동을 입력해주세요 : ";
 		cin >> select;
 
 		if (select == 1)
@@ -57,7 +58,7 @@ void Battle::process(Player& p1)
 	}
 }
 
-void Battle::win(Player& p1, Slime s1)
+void Battle::win(Player& p1, Slime& s1)
 {
 	cout << p1.getName() << "은(는) " << s1.getName() << "과의 전투에서 승리했다!\n";
 	cout << s1.getMoney() << "gold를 얻었다.\n\n";
@@ -77,7 +78,7 @@ void Battle::win(Player& p1, Slime s1)
 	system("cls");
 }
 
-void Battle::defeat(Player& p1, Slime s1)
+void Battle::defeat(Player& p1, Slime& s1)
 {
 	cout << p1.getName() << "은(는) " << s1.getName() << "과의 전투에서 패배했다...\n\n";
 	cout << "Game Over...\n";
@@ -90,8 +91,16 @@ string Battle::run(Player& p1, Slime& s1, bool& isRun)
 
 	if ((rand() % 100 + 1) <= RUN_PERCENT)
 	{
-		str = p1.getName() + "은(는) 성공적으로 도망쳤다.\n\n";
+		system("cls");
+
+		cout << p1.getName() << "은(는) 성공적으로 도망쳤다.\n\n";
 		isRun = true;
+
+		p1.showInfo();
+
+		cout << "진행하려면 아무키나 입력하세요...\n";
+		string none;
+		cin >> none;
 	}
 	else
 	{

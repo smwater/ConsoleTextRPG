@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Hotel.h"
 
-void Plaza::update(Player p1)
+void Plaza::update(Player& p1)
 {
 	do
 	{

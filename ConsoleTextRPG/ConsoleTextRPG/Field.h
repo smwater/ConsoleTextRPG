@@ -10,7 +10,7 @@ public:
 	Field(const Field& other) = delete;
 	Field& operator=(const Field& other) = delete;
 
-	void update(Player p1);
+	void update(Player& p1);
 
 private:
 	int _placeIndex = 0;

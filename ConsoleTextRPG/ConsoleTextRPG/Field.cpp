@@ -2,7 +2,7 @@
 #include "Battle.h"
 #include "Plaza.h"
 
-void Field::update(Player p1)
+void Field::update(Player& p1)
 {
 	do
 	{
