@@ -14,4 +14,8 @@ public:
 	Game& operator=(const Game& other) = delete;
 
 	void run();
+	Player nextScene(int select) const;
+
+private:
+
 };

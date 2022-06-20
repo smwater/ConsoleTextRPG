@@ -31,13 +31,18 @@ void Player::make()
 
 	cout << "\n캐릭터 생성이 완료되었습니다.\n";
 	system("cls");
-
-	Plaza p;
-	
-	p.update();
 }
 
 void Player::showInfo() const
 {
-	cout << "캐릭터 이름 : " << _name << "|| Lv : " << _level << endl;
+	if (_level < 20)
+	{
+		cout << "캐릭터 이름 : " << _name << " | Lv : " << _level << " | Exp : " << _exp << "/" << _maxExp[_level - 1] << "\n";
+	}
+	else
+	{
+		cout << "캐릭터 이름 : " << _name << " | Max Lv | Exp : " << _exp << " /0\n";
+	}
+	cout << "HP : " << _hp << "/" << _maxHp  << " | MP : " << _mp << "/" << _maxMp << "\n";
+	cout << "힘 : " << _str << " | 지능 : " << _intel << " | 공격력 : " << _dmg << "\n\n";
 }

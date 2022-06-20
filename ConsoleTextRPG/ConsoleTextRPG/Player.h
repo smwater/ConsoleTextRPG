@@ -6,7 +6,7 @@ class Player
 public:
 	Player() = default;
 	~Player() = default;
-	Player(const Player& other) = delete;
+	Player(const Player& other) = default;
 	Player& operator=(const Player& other) = delete;
 
 	void make();
@@ -17,6 +17,7 @@ private:
 	string _job = {};
 	int _level = 1;
 	int _exp = 0;
+	const int _maxExp[19] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280};
 	int _hp = 10;
 	int _maxHp = 10;
 	int _mp = 10;
