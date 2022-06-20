@@ -57,6 +57,11 @@ void Player::setMoney(int money)
 	_money = money;
 }
 
+void Player::setExp(int exp)
+{
+	_exp = exp;
+}
+
 int Player::getHp()
 {
 	return _hp;
@@ -70,4 +75,20 @@ int Player::getDmg()
 string Player::getName()
 {
 	return _name;
+}
+
+bool Player::levelUp()
+{
+	if (_exp >= _maxExp[_level - 1])
+	{
+		_exp -= _maxExp[_level - 1];
+		_level++;
+
+		_hp = _maxHp;
+		_mp = _maxMp;
+
+		return true;
+	}
+
+	return false;
 }

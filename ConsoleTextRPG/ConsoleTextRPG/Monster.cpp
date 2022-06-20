@@ -7,6 +7,7 @@ void Slime::make()
 	if (random < 60)
 	{
 		_name = _possibleName[0];
+		_exp = 5;
 		_hp = 50;
 		_maxHp = 50;
 		_mp = 50;
@@ -17,6 +18,7 @@ void Slime::make()
 	else if (random < 90)
 	{
 		_name = _possibleName[1];
+		_exp = 10;
 		_hp = 70;
 		_maxHp = 70;
 		_mp = 70;
@@ -27,6 +29,7 @@ void Slime::make()
 	else
 	{
 		_name = _possibleName[2];
+		_exp = 0;
 		_hp = 50;
 		_maxHp = 50;
 		_mp = 50;
@@ -55,6 +58,11 @@ void Slime::showInfo()
 int Slime::getHp()
 {
 	return _hp;
+}
+
+int Slime::getExp()
+{
+	return _exp;
 }
 
 void Slime::minusHp(int dmg)

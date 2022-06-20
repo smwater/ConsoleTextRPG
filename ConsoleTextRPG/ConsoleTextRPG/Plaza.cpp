@@ -21,12 +21,6 @@ void Plaza::update(Player p1)
 		f.update(p1);
 		break;
 	}
-	case 2:
-		cout << 2;
-		break;
-	case 3:
-		cout << 3;
-		break;
 	}
 }
 
@@ -34,7 +28,7 @@ void Plaza::show() const
 {
 	cout << "갈 수 있는 장소 목록\n\n";
 	cout << "1. 사냥터\n";
-	cout << "2. 상점\n";
+	cout << "2. 상점 (미완)\n";
 	// cout << "3. 촌장의 집\n";	// 추가 구현하기
-	cout << "3. 여관\n\n";
+	cout << "3. 여관 (미완)\n\n";
 }

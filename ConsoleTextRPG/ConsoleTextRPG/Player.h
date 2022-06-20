@@ -13,9 +13,11 @@ public:
 	void showInfo() const;
 	void minusHp(int dmg);
 	void setMoney(int money);
+	void setExp(int exp);
 	int getHp();
 	int getDmg();
 	string getName();
+	bool levelUp();
 
 private:
 	string _name = {};

@@ -54,9 +54,11 @@ void Battle::process(Player p1)
 		if (s1.getHp() == 0)
 		{
 			win(p1, s1);
+			p1.setExp(s1.getExp());
 			p1.setMoney(s1.getMoney());
 			break;
 		}
+
 	} while (isRun == false);
 
 	if (death == false)
@@ -71,6 +73,13 @@ void Battle::win(Player p1, Slime s1)
 {
 	cout << p1.getName() << "은(는) " << s1.getName() << "과의 전투에서 승리했다!\n";
 	cout << s1.getMoney() << "원을 얻었다.\n\n";
+
+	p1.setExp(s1.getExp());
+	if (p1.levelUp())
+	{
+		cout << p1.getName() << "은(는) 레벨업 했다!\n";
+		cout << "보상으로 HP와 MP가 회복됩니다. 축하합니다!\n\n";
+	}
 
 	cout << "뒤로 돌아가려면 아무키나 입력하세요...\n";
 	string none;
