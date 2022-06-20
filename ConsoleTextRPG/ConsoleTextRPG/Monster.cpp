@@ -51,7 +51,7 @@ string Slime::getName()
 
 void Slime::showInfo()
 {
-	cout << "몬스터 이름 : " << _name << " | Lv : " << _level << " | 공격력 : " << _dmg << "\n";
+	cout << _name << " | 공격력 : " << _dmg << "\n";
 	cout << "HP : " << _hp << "/" << _maxHp << " | MP : " << _mp << "/" << _maxMp << " | 소지금 : " << _money << "\n";
 }
 
