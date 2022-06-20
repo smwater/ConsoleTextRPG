@@ -3,7 +3,7 @@
 
 #define RUN_PERCENT 70
 
-void Battle::process(Player p1)
+void Battle::process(Player& p1)
 {
 	Slime s1;
 	s1.make();
@@ -56,9 +56,6 @@ void Battle::process(Player p1)
 		if (s1.getHp() <= 0)
 		{
 			win(p1, s1);
-			p1.earnExp(s1.getExp());
-			p1.levelUp();
-			p1.earnMoney(s1.getMoney());
 			break;
 		}
 
@@ -66,16 +63,15 @@ void Battle::process(Player p1)
 
 	if (death == false)
 	{
-		p1.showInfo();
 		Plaza plaza;
 		plaza.update(p1);
 	}
 }
 
-void Battle::win(Player p1, Slime s1)
+void Battle::win(Player& p1, Slime s1)
 {
 	cout << p1.getName() << "은(는) " << s1.getName() << "과의 전투에서 승리했다!\n";
-	cout << s1.getMoney() << "원을 얻었다.\n\n";
+	cout << s1.getMoney() << "gold를 얻었다.\n\n";
 
 	p1.earnExp(s1.getExp());
 	if (p1.levelUp())
@@ -91,7 +87,7 @@ void Battle::win(Player p1, Slime s1)
 	system("cls");
 }
 
-void Battle::defeat(Player p1, Slime s1)
+void Battle::defeat(Player& p1, Slime s1)
 {
 	cout << p1.getName() << "은(는) " << s1.getName() << "과의 전투에서 패배했다...\n\n";
 	cout << "Game Over...\n";

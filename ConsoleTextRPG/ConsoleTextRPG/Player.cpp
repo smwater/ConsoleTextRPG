@@ -72,6 +72,11 @@ int Player::getDmg()
 	return _dmg;
 }
 
+int Player::getMoney()
+{
+	return _money;
+}
+
 string Player::getName()
 {
 	return _name;
@@ -86,8 +91,7 @@ bool Player::levelUp()
 
 		_maxHp += 20;
 		_maxMp += 20;
-		_hp = _maxHp;
-		_mp = _maxMp;
+		recovery();
 
 		if (_job == "ภüป็")
 		{
@@ -104,4 +108,10 @@ bool Player::levelUp()
 	}
 
 	return false;
+}
+
+void Player::recovery()
+{
+	_hp = _maxHp;
+	_mp = _maxMp;
 }

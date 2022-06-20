@@ -11,9 +11,9 @@ public:
 	Battle(const Battle & other) = delete;
 	Battle& operator=(const Battle & other) = delete;
 
-	void process(Player p1);
-	void win(Player p1, Slime s1);
-	void defeat(Player p1, Slime s1);
+	void process(Player& p1);
+	void win(Player& p1, Slime s1);
+	void defeat(Player& p1, Slime s1);
 
 private:
 };

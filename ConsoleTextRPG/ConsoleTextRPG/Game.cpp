@@ -8,7 +8,6 @@ void Game::run()
 
 	Player p1 = nextScene(select);
 
-	p1.showInfo();
 	Plaza p;
 	p.update(p1);
 }

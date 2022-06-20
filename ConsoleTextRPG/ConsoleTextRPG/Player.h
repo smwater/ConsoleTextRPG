@@ -16,8 +16,10 @@ public:
 	void earnExp(int exp);
 	int getHp();
 	int getDmg();
+	int getMoney();
 	string getName();
 	bool levelUp();
+	void recovery();
 
 private:
 	string _name = {};

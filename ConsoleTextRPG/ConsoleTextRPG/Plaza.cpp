@@ -1,11 +1,13 @@
 #include "Plaza.h"
 #include "Field.h"
 #include "Player.h"
+#include "Hotel.h"
 
 void Plaza::update(Player p1)
 {
 	do
 	{
+		p1.showInfo();
 		show();
 
 		cout << "이동할 장소를 입력하세요 : ";
@@ -21,6 +23,9 @@ void Plaza::update(Player p1)
 		f.update(p1);
 		break;
 	}
+	case 3:
+		Hotel h;
+		h.update(p1);
 	}
 }
 
@@ -30,5 +35,5 @@ void Plaza::show() const
 	cout << "1. 사냥터\n";
 	cout << "2. 상점 (미완)\n";
 	// cout << "3. 촌장의 집\n";	// 추가 구현하기
-	cout << "3. 여관 (미완)\n\n";
+	cout << "3. 여관\n\n";
 }
