@@ -52,14 +52,14 @@ void Player::minusHp(int dmg)
 	_hp -= dmg;
 }
 
-void Player::setMoney(int money)
+void Player::earnMoney(int money)
 {
-	_money = money;
+	_money += money;
 }
 
-void Player::setExp(int exp)
+void Player::earnExp(int exp)
 {
-	_exp = exp;
+	_exp += exp;
 }
 
 int Player::getHp()
@@ -84,8 +84,21 @@ bool Player::levelUp()
 		_exp -= _maxExp[_level - 1];
 		_level++;
 
+		_maxHp += 20;
+		_maxMp += 20;
 		_hp = _maxHp;
 		_mp = _maxMp;
+
+		if (_job == "전사")
+		{
+			_str += 2;
+			_dmg = _str * 2;
+		}
+		if (_job == "마법사")
+		{
+			_intel += 2;
+			_dmg = _intel * 2;
+		}
 
 		return true;
 	}

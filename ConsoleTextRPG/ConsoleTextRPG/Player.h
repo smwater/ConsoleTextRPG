@@ -12,8 +12,8 @@ public:
 	void make();
 	void showInfo() const;
 	void minusHp(int dmg);
-	void setMoney(int money);
-	void setExp(int exp);
+	void earnMoney(int money);
+	void earnExp(int exp);
 	int getHp();
 	int getDmg();
 	string getName();

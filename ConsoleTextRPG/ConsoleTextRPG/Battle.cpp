@@ -1,6 +1,8 @@
 #include "Battle.h"
 #include "Plaza.h"
 
+#define RUN_PERCENT 70
+
 void Battle::process(Player p1)
 {
 	Slime s1;
@@ -32,30 +34,31 @@ void Battle::process(Player p1)
 		}
 		else
 		{
-			if ((rand() % 100 + 1) <= 70)
+			if ((rand() % 100 + 1) <= RUN_PERCENT)
 			{
-				str = p1.getName() + "은(는) 성공적으로 도망쳤다.\n";
+				str = p1.getName() + "은(는) 성공적으로 도망쳤다.\n\n";
 				isRun = true;
 			}
 			else
 			{
-				str = p1.getName() + "은(는) 도망치지 못했다.\n";
+				str = p1.getName() + "은(는) 도망치지 못했다.\n\n";
 				p1.minusHp(s1.getDmg());
 			}
 		}
 
 		system("cls");
 
-		if (p1.getHp() == 0)
+		if (p1.getHp() <= 0)
 		{
 			defeat(p1, s1);
 			death = true;
 		}
-		if (s1.getHp() == 0)
+		if (s1.getHp() <= 0)
 		{
 			win(p1, s1);
-			p1.setExp(s1.getExp());
-			p1.setMoney(s1.getMoney());
+			p1.earnExp(s1.getExp());
+			p1.levelUp();
+			p1.earnMoney(s1.getMoney());
 			break;
 		}
 
@@ -74,7 +77,7 @@ void Battle::win(Player p1, Slime s1)
 	cout << p1.getName() << "은(는) " << s1.getName() << "과의 전투에서 승리했다!\n";
 	cout << s1.getMoney() << "원을 얻었다.\n\n";
 
-	p1.setExp(s1.getExp());
+	p1.earnExp(s1.getExp());
 	if (p1.levelUp())
 	{
 		cout << p1.getName() << "은(는) 레벨업 했다!\n";
