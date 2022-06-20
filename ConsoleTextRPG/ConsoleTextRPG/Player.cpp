@@ -43,6 +43,6 @@ void Player::showInfo() const
 	{
 		cout << "캐릭터 이름 : " << _name << " | Max Lv | Exp : " << _exp << " /0\n";
 	}
-	cout << "HP : " << _hp << "/" << _maxHp  << " | MP : " << _mp << "/" << _maxMp << "\n";
+	cout << "HP : " << _hp << "/" << _maxHp  << " | MP : " << _mp << "/" << _maxMp << " | 소지금 : " << _money << "\n";
 	cout << "힘 : " << _str << " | 지능 : " << _intel << " | 공격력 : " << _dmg << "\n\n";
 }

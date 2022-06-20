@@ -10,7 +10,7 @@ void Game::run()
 
 	p1.showInfo();
 	Plaza p;
-	p.update();
+	p.update(p1);
 }
 
 Player Game::nextScene(int select) const

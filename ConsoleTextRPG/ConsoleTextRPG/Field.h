@@ -1,5 +1,6 @@
 #pragma once
 #include "Header.h"
+#include "Player.h"
 
 class Field
 {
@@ -9,7 +10,7 @@ public:
 	Field(const Field& other) = delete;
 	Field& operator=(const Field& other) = delete;
 
-	void update();
+	void update(Player p1);
 
 private:
 	int _placeIndex = 0;

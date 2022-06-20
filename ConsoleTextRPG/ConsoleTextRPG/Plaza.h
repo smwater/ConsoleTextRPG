@@ -1,5 +1,6 @@
 #pragma once
 #include "Header.h"
+#include "Player.h"
 
 class Plaza
 {
@@ -9,7 +10,7 @@ public:
 	Plaza(const Plaza& other) = delete;
 	Plaza& operator=(const Plaza& other) = delete;
 
-	void update();
+	void update(Player p1);
 	
 private:
 	int _placeIndex = 0;

@@ -2,7 +2,7 @@
 #include "Field.h"
 #include "Player.h"
 
-void Plaza::update()
+void Plaza::update(Player p1)
 {
 	do
 	{
@@ -18,7 +18,7 @@ void Plaza::update()
 	case 1:
 	{
 		Field f;
-		f.update();
+		f.update(p1);
 		break;
 	}
 	case 2:
@@ -26,9 +26,6 @@ void Plaza::update()
 		break;
 	case 3:
 		cout << 3;
-		break;
-	case 4:
-		cout << 4;
 		break;
 	}
 }
@@ -38,6 +35,6 @@ void Plaza::show() const
 	cout << "갈 수 있는 장소 목록\n\n";
 	cout << "1. 사냥터\n";
 	cout << "2. 상점\n";
-	cout << "3. 촌장의 집\n";
-	cout << "4. 여관\n\n";
+	// cout << "3. 촌장의 집\n";	// 추가 구현하기
+	cout << "3. 여관\n\n";
 }

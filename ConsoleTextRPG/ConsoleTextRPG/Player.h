@@ -22,6 +22,7 @@ private:
 	int _maxHp = 10;
 	int _mp = 10;
 	int _maxMp = 10;
+	int _money = 0;
 	int _str = 0;
 	int _intel = 0;
 	int _dmg = 0; // 직업에 따라 계산식이 정해짐 

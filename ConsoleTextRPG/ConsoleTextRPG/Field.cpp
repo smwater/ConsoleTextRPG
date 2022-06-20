@@ -1,6 +1,7 @@
 #include "Field.h"
+#include "Battle.h"
 
-void Field::update()
+void Field::update(Player p1)
 {
 	do
 	{
@@ -12,6 +13,8 @@ void Field::update()
 	} while (_placeIndex != 1);
 
 	// 전투시작
+	Battle b;
+	b.process(p1);
 }
 
 void Field::show() const
